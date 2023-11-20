@@ -1,2 +1,3 @@
-var teste = 'Hello! 2';
+"use strict";
+const teste = 'Hello! 2';
 console.log(teste);
