@@ -34,7 +34,7 @@ let corPrimaria = Cor.Azul;
 console.log(corPrimaria);
 console.log(typeof Cor);
 console.log(typeof corPrimaria);
-function saudar(pessoa) {
+function saudarComOla(pessoa) {
     console.log('Olá, ' + pessoa.nome);
 }
 function mudarNome(pessoa) {
@@ -42,8 +42,13 @@ function mudarNome(pessoa) {
 }
 const pessoa = {
     nome: 'João',
-    idade: 27
+    idade: 27,
+    saudar(sobrenome) {
+        console.log('Olá, meu nome é ' + this.nome + ' ' + sobrenome);
+    }
 };
-saudar(pessoa);
+saudarComOla(pessoa);
 mudarNome(pessoa);
-saudar(pessoa);
+saudarComOla(pessoa);
+// saudar({nome: 'Jonas', idade:27, altura: 1.80})
+pessoa.saudar("Relampago Marquinhos");

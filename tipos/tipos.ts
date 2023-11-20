@@ -45,9 +45,12 @@ console.log(typeof corPrimaria)
 
 interface Humano {
     nome: string
+    idade?: number // colocamos o ? quando é um parâmetro opicional
+    [prop: string]: any // utilizamos essa sintaxe quando não sabemos o nome do patrametro nem o tipo
+    saudar(sobrenome: string): void
 }
 
-function saudar(pessoa: Humano){
+function saudarComOla(pessoa: Humano){
     console.log('Olá, ' + pessoa.nome)
 }
 
@@ -55,11 +58,16 @@ function mudarNome(pessoa:Humano){
     pessoa.nome = 'Joana'
 }
 
-const pessoa = {
+const pessoa: Humano = {
     nome: 'João',
-    idade: 27
+    idade: 27,
+    saudar(sobrenome: string) {
+        console.log('Olá, meu nome é ' + this.nome + ' ' + sobrenome)
+    }
 }
 
-saudar(pessoa)
+saudarComOla(pessoa)
 mudarNome(pessoa)
-saudar(pessoa)
+saudarComOla(pessoa)
+// saudar({nome: 'Jonas', idade:27, altura: 1.80})
+pessoa.saudar("Relampago Marquinhos")
