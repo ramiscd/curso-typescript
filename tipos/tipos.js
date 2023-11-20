@@ -34,3 +34,16 @@ let corPrimaria = Cor.Azul;
 console.log(corPrimaria);
 console.log(typeof Cor);
 console.log(typeof corPrimaria);
+function saudar(pessoa) {
+    console.log('Olá, ' + pessoa.nome);
+}
+function mudarNome(pessoa) {
+    pessoa.nome = 'Joana';
+}
+const pessoa = {
+    nome: 'João',
+    idade: 27
+};
+saudar(pessoa);
+mudarNome(pessoa);
+saudar(pessoa);
