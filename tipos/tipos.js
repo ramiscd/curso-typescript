@@ -47,8 +47,10 @@ const pessoa = {
         console.log('Olá, meu nome é ' + this.nome + ' ' + sobrenome);
     }
 };
-saudarComOla(pessoa);
-mudarNome(pessoa);
-saudarComOla(pessoa);
-// saudar({nome: 'Jonas', idade:27, altura: 1.80})
-pessoa.saudar("Relampago Marquinhos");
+let potencia;
+potencia = function (base, exp) {
+    return Array(exp).fill(base).reduce((t, a) => t * a);
+};
+console.log(potencia(3, 10));
+console.log(Math.pow(3, 10));
+console.log(3 ** 10);
